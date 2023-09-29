@@ -1,0 +1,78 @@
+<!--componente da matriz-->
+
+<mat-form-field appearance="fill" style="width: 100%; margin-bottom: 1rem">
+  <mat-label>Duração mínima do curso em semestres</mat-label>
+  <mat-select
+    [(ngModel)]="matrizDuracaoMinima"
+    (valueChange)="alterarDuracaoMinima($event)"
+    (openedChange)="openedChange($event)"
+    required
+    name="duracaoMinimaSemestres"
+  >
+    <mat-option
+      *ngFor="let num of matrizDuracaoMinimaSemestres"
+      [value]="num"
+      [disabled]="num < maiorPeriodoPreenchido"
+      >{{num}}</mat-option
+    >
+  </mat-select>
+  <mat-hint *ngIf="maiorPeriodoPreenchido > 0">
+    Os períodos desabilitados possuem componentes associados e/ou foram
+    informados no fluxo curricular.
+  </mat-hint>
+</mat-form-field>
+
+<!--componente fluxo curricular-->
+<div style="background-color: #f7f7f7; padding: 0.75rem; min-height: 6rem">
+  <p>
+    Informe em quais períodos e com que frequência em cada período os itens
+    abaixo farão parte do fluxo curricular:
+  </p>
+
+  <p *ngIf="processando">Carregando...</p>
+
+  <ng-container *ngIf="!processando">
+    <table>
+      <tr>
+        <th></th>
+        <th [attr.colspan]="duracaoMinimaObservable.value">Períodos</th>
+      </tr>
+      <tr>
+        <th></th>
+        <th *ngFor="let ln of cabecalhoReduzido()">
+          {{ln.label}}
+        </th>
+      </tr>
+
+      <!--apresentação dos dados-->
+      <tr *ngFor="let fc of todosFluxosCurriculares">
+        <th style="text-align: right">
+          {{getLabelTipoTipoFluxoCurricular(fc.tipoFluxo)}}
+        </th>
+        <td *ngFor="let ffp of listaReduzida(fc.fluxosFrequenciasPeriodos)">
+          <button
+            type="button"
+            mat-stroked-button
+            (click)="incrementarFrequencia(ffp)"
+            (contextmenu)="decrementarFrequencia($event, ffp)"
+            color="secondary"
+            style="min-width: 2rem; width: 2rem; height: 2rem; padding: 0"
+          >
+            {{ffp.frequencia || 0 > 0? ffp.frequencia : '' }}
+          </button>
+
+          <!--
+    Com Select ocupou muito espaço
+    mat-form-field appearance="fill" style="width: 3rem; height: 1rem;">
+      <mat-select [(value)]="ffp.frequencia" (valueChange)="alterarFrequencia($event)">
+        <mat-option value="null">nenhum</mat-option>
+        <mat-option value="1">1</mat-option>
+        <mat-option value="2">2</mat-option>
+        <mat-option value="3">3</mat-option>
+      </mat-select>
+  </mat-form-field-->
+        </td>
+      </tr>
+    </table>
+  </ng-container>
+</div>
