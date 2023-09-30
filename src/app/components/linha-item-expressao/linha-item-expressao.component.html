@@ -1,13 +1,33 @@
 <div class="linha-item-expressao">
     <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
-        <mat-icon>favorite</mat-icon>
+        <mat-icon>delete</mat-icon>
     </button>
 
     <mat-form-field appearance="outline" class="operador">
-        <!--<mat-label>Operador</mat-label>-->
-        <mat-select placeholder="Operador">
-          <mat-option value="E">E</mat-option>
-          <mat-option value="OU">OU</mat-option>
+        <mat-label *ngIf="index === 0">---</mat-label>
+        <mat-select placeholder="Operador" [(ngModel)]="itemExpressao.operador" [disabled]="index === 0">
+            <mat-option value="E">E</mat-option>
+            <mat-option value="OU">OU</mat-option>
         </mat-select>
     </mat-form-field>
+
+    <!--<ng-container *ngIf="itemExpressao.tipo==='COMPONENTE'">
+
+    </ng-container>
+-->
+
+    <ng-template [ngIf]="itemExpressao.tipo==='COMPONENTE'" [ngIfElse]="elseExpressao">
+        <div class="campo-componente">
+            <mat-form-field>
+                <input matInput placeholder="Buscar componente" [(ngModel)]="itemExpressao.componente" [readonly]="!modoEdicao">
+            </mat-form-field>
+            <button mat-icon-button color="green" aria-label="Example icon button with a heart icon" (click)="modoEdicao = !modoEdicao">
+                <mat-icon>{{modoEdicao? 'check' : 'edit'}}</mat-icon>
+            </button>
+        </div>
+    </ng-template>
+
+    <ng-template #elseExpressao>
+        <card-principal [itemExpressoes]="itemExpressao.children"></card-principal>
+    </ng-template>
 </div>

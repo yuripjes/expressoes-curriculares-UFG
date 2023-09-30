@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ItemExpressao } from 'src/app/model/itemExpressao.model';
 
 @Component({
   selector: 'linha-item-expressao',
@@ -6,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./linha-item-expressao.component.scss']
 })
 export class LinhaItemExpressaoComponent implements OnInit {
+
+  @Input() itemExpressao: ItemExpressao = new ItemExpressao();
+  @Input() index: number = -1;
+
+  modoEdicao: boolean = false;
 
   constructor() { }
 

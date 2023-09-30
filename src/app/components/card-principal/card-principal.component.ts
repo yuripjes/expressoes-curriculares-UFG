@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ItemExpressao } from 'src/app/model/itemExpressao.model';
 
 @Component({
   selector: 'card-principal',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-principal.component.scss']
 })
 export class CardPrincipalComponent implements OnInit {
+
+  @Input() itemExpressoes: ItemExpressao[] = [];
 
   constructor() { }
 

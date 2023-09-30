@@ -2,8 +2,17 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.25rem;
 }
 
 .operador {
     width: 100px;
+}
+
+.campo-componente {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
 }
