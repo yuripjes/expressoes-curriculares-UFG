@@ -1,7 +1,10 @@
 .principal {
     /*padding: 0.5rem;*/
     width: 100%;
-    border: 1px solid gray;
+    border: 1px solid #cacaca;;
+    border-radius: 10px;
+
+    background-color: rgba(91, 91, 91, 0.10);
 }
 
 .rodape {
@@ -9,5 +12,5 @@
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
-    background-color: #e3e3e3;
+    background-color: #ffffff6e;
 }

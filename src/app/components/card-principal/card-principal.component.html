@@ -1,11 +1,11 @@
 <div class="principal">
     
     <!-- ngfor aqui-->
-    <linha-item-expressao *ngFor="let ie of itemExpressoes; let i = index" [itemExpressao]="ie" [index]="i"></linha-item-expressao>
+    <linha-item-expressao *ngFor="let ie of itemExpressoes; let i = index" [itemExpressao]="ie" [index]="i" [alturaDoNo]="alturaDoNo"></linha-item-expressao>
 
     <div class="rodape">
-        <button>+ Componente</button>
-        <button>+ Grupo</button>
+        <button (click)="adicionarComponente()">+ Componente</button>
+        <button (click)="adicionarGrupo()">+ Grupo</button>
     </div>
     
 </div>

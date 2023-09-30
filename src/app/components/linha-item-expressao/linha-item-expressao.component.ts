@@ -13,6 +13,8 @@ export class LinhaItemExpressaoComponent implements OnInit {
 
   modoEdicao: boolean = false;
 
+  @Input() alturaDoNo: number = 0; //0 = raiz
+
   constructor() { }
 
   ngOnInit(): void {
