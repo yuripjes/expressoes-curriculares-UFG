@@ -37,4 +37,8 @@ export class CardPrincipalComponent implements OnInit {
 
     this.itemExpressoes.push(itemExpressao);
   }
+
+  deleteItemExpressao(index: number) {
+    this.itemExpressoes.splice(index, 1);
+  }
 }
