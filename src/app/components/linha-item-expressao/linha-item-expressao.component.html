@@ -18,9 +18,13 @@
 
     <ng-template [ngIf]="itemExpressao.tipo==='COMPONENTE'" [ngIfElse]="elseExpressao">
         <div class="campo-componente">
-            <mat-form-field>
-                <input matInput placeholder="Buscar componente" [(ngModel)]="itemExpressao.componente" [readonly]="!modoEdicao">
+            <mat-form-field appearance="outline" >
+                <mat-label>Componente</mat-label>
+                <mat-select placeholder="Seleciona o componente" [(ngModel)]="itemExpressao.componente" [matTooltip]="itemExpressao.componente">
+                    <mat-option *ngFor="let option of componentesDisponiveis" [value]="option">{{option}}</mat-option>
+                </mat-select>
             </mat-form-field>
+
             <button mat-icon-button color="green" aria-label="Example icon button with a heart icon" (click)="modoEdicao = !modoEdicao">
                 <mat-icon>{{modoEdicao? 'check' : 'edit'}}</mat-icon>
             </button>

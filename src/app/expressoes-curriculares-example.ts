@@ -16,13 +16,13 @@ export class ExpressoesCurricularesExample {
     {
       operador: null,
       tipo: 'COMPONENTE',
-      componente: 'FAL0214 - Libras',
+      componente: 'FAL0214 - INTRODUÇÃO À LÍNGUA BRASILEIRA DE SINAIS - LIBRAS',
       children: []
     },
     {
       operador: 'OU',
       tipo: 'COMPONENTE',
-      componente: 'FAL0215 - Outra Libras',
+      componente: 'FAL0223 - INTRODUÇÃO AOS ESTUDOS DA LIBRAS',
       children: []
     },
     {
@@ -33,13 +33,13 @@ export class ExpressoesCurricularesExample {
         {
           operador: null,
           tipo: 'COMPONENTE',
-          componente: 'FAL0834 - Portugues avançado',
+          componente: 'FAL0692 - LIBRAS BÁSICO 1',
           children: []
         },
         {
-          operador: 'OU',
+          operador: 'E',
           tipo: 'COMPONENTE',
-          componente: 'FAL0999 - Outra Lingua portuguesa',
+          componente: 'FAL0698 - LIBRAS BÁSICO 2',
           children: []
         },
       ]
