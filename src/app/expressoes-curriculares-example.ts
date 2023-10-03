@@ -42,6 +42,25 @@ export class ExpressoesCurricularesExample {
           componente: 'FAL0698 - LIBRAS BÁSICO 2',
           children: []
         },
+        {
+          operador: 'OU',
+          tipo: 'EXPRESSAO',
+          componente: '',
+          children: [
+            {
+              operador: null,
+              tipo: 'COMPONENTE',
+              componente: 'IME0075 - CÁLCULO 1A',
+              children: []
+            },
+            {
+              operador: 'E',
+              tipo: 'COMPONENTE',
+              componente: 'IME0351 - ÁLGEBRA LINEAR',
+              children: []
+            },
+          ]
+        }
       ]
     }
   ];

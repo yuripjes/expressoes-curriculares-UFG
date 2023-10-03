@@ -9,9 +9,10 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {HttpClientModule} from '@angular/common/http';
 import { CardPrincipalComponent } from './components/card-principal/card-principal.component';
 import { LinhaItemExpressaoComponent } from './components/linha-item-expressao/linha-item-expressao.component';
+import { ExpressaoFormatadaComponent } from './components/expressao-formatada/expressao-formatada.component';
 
 @NgModule({
-  declarations: [ExpressoesCurricularesExample, CardPrincipalComponent, LinhaItemExpressaoComponent],
+  declarations: [ExpressoesCurricularesExample, CardPrincipalComponent, LinhaItemExpressaoComponent, ExpressaoFormatadaComponent],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,

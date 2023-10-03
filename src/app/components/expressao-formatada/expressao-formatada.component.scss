@@ -1,0 +1,17 @@
+.card-expressao {
+  width: 100%;
+  border: 1px solid #cacaca;
+  border-radius: 10px;
+  background-color: rgba(91, 91, 91, 0.1);
+
+  padding: 1rem;
+}
+
+.componente:hover {
+    /*font-weight: 500; gera incomodo ao aumentar o tamanho do texto*/
+    background-color: greenyellow;
+}
+.expressao:hover {
+    /*font-weight: 500; gera incomodo ao aumentar o tamanho do texto*/
+    background-color: aqua;
+}

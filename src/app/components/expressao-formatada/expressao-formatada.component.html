@@ -1,0 +1,26 @@
+<div class="card-expressao">
+ <!--Exemplo: (<span class="expressao">FAL0214</span> OU <span class="expressao">FAL0223</span> OU <span class="expressao">(FAL0692 E FAL0698))</span>
+   
+    -->
+
+
+    <ng-template #expressaoRoot ngFor let-item [ngForOf]="itemExpressoes" let-i="index">
+        <span *ngIf="item.tipo === 'COMPONENTE'" class="componente">{{getLabelTipoComponente(item, i)}}</span>
+
+        <span *ngIf="item.tipo === 'EXPRESSAO'" class="expressao">
+            {{i === 0 ? '&#40;' : item.operador + ' &#40;'}}            
+            <ng-template
+                ngFor
+                [ngForOf]="item.children"
+                [ngForTemplate]="expressaoRoot">
+                <!--
+                    NOTE: The "$implicit" property of the ngFor context is what will
+                    be made available to the template ref's implicit let-node binding.
+                -->
+            </ng-template>
+            &#41;
+            &nbsp;
+        </span>
+
+    </ng-template>
+</div>
