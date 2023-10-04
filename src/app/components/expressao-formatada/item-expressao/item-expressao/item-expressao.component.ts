@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, TemplateRef, ViewChild } from "@angular/core";
 import { ItemExpressao } from "src/app/model/itemExpressao.model";
 
 @Component({
@@ -7,6 +7,10 @@ import { ItemExpressao } from "src/app/model/itemExpressao.model";
   styleUrls: ["./item-expressao.component.scss"],
 })
 export class ItemExpressaoComponent implements OnInit {
+  /*Caso seja necessário retirar o wrapper
+  @ViewChild('childRef') childRef: TemplateRef<any>;
+  */
+  
   @Input() itemExpressao: ItemExpressao = new ItemExpressao();
   @Input() index: number = -1;
 

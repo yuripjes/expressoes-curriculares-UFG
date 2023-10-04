@@ -3,5 +3,14 @@
     <item-expressao *ngFor="let item of itemExpressoes; let i = index" [itemExpressao]="item"
         [index]="i"></item-expressao>
 
+        <!--
+        Caso seja necessário retirar o wrapper (não esquecer da recursão também):
+        
+        <ng-container *ngFor="let item of itemExpressoes; let i = index">
+            <item-expressao #itemExpressaoWrapper [itemExpressao]="item"></item-expressao>
+            <ng-content *ngTemplateOutlet="itemExpressaoWrapper.childRef"></ng-content>
+        </ng-container>
+        -->
+
 
 </div>
