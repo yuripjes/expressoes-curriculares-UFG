@@ -1,4 +1,4 @@
-.card-expressao {
+#card-expressao {
   width: 100%;
   border: 1px solid #cacaca;
   border-radius: 10px;
@@ -13,7 +13,7 @@
 }
 .operador:hover {
   /*font-weight: 500; gera incomodo ao aumentar o tamanho do texto*/
-  background-color: purple;
+  background-color: lightsalmon;
 }
 .parenteses:hover {
   /*font-weight: 500; gera incomodo ao aumentar o tamanho do texto*/
