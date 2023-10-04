@@ -1,10 +1,10 @@
 <ng-template [ngIf]="itemExpressao.tipo === 'COMPONENTE'">
     <!--Exibem "FAL0214" ou "E/OU FAL0214" no inicio da expressão-->
     <span *ngIf="index === 0; else elseComponenteNaoPrimeiro"
-        class="componente">{{getLabelTipoComponente(itemExpressao)}} </span>
+        class="componente" [matTooltip]="itemExpressao.componente">{{getLabelTipoComponente(itemExpressao)}} </span>
     <ng-template #elseComponenteNaoPrimeiro>
         <span class="operador">{{itemExpressao.operador}} </span>
-        <span class="componente">{{getLabelTipoComponente(itemExpressao)}} </span>
+        <span class="componente" [matTooltip]="itemExpressao.componente">{{getLabelTipoComponente(itemExpressao)}} </span>
     </ng-template>
 </ng-template>
 
