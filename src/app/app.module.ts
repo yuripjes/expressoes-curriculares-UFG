@@ -10,9 +10,10 @@ import {HttpClientModule} from '@angular/common/http';
 import { CardPrincipalComponent } from './components/card-principal/card-principal.component';
 import { LinhaItemExpressaoComponent } from './components/linha-item-expressao/linha-item-expressao.component';
 import { ExpressaoFormatadaComponent } from './components/expressao-formatada/expressao-formatada.component';
+import { ItemExpressaoComponent } from './components/expressao-formatada/item-expressao/item-expressao/item-expressao.component';
 
 @NgModule({
-  declarations: [ExpressoesCurricularesExample, CardPrincipalComponent, LinhaItemExpressaoComponent, ExpressaoFormatadaComponent],
+  declarations: [ExpressoesCurricularesExample, CardPrincipalComponent, LinhaItemExpressaoComponent, ExpressaoFormatadaComponent, ItemExpressaoComponent],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,

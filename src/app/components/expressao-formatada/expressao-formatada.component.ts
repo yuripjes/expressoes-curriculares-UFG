@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit } from '@angular/core';
 import { ItemExpressao } from 'src/app/model/itemExpressao.model';
 
 @Component({
@@ -15,9 +15,8 @@ export class ExpressaoFormatadaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getLabelTipoComponente(item: ItemExpressao) {
-    if(!item.componente) return '';
-    return item.componente.substring(0,7);
-  }
+
+
+
 
 }

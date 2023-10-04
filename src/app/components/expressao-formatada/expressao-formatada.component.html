@@ -1,37 +1,7 @@
 <div id="card-expressao">
 
-    <ng-template #expressaoRoot ngFor let-item [ngForOf]="itemExpressoes" let-i="index">
-        <ng-template [ngIf]="item.tipo === 'COMPONENTE'">
-            <!--Exibem "FAL0214" ou "E/OU FAL0214" no inicio da expressão-->
-            <span *ngIf="i === 0; else elseComponenteNaoPrimeiro" class="componente">{{getLabelTipoComponente(item)}} </span>
-            <ng-template #elseComponenteNaoPrimeiro>
-                <span class="operador">{{item.operador}} </span>
-                <span class="componente">{{getLabelTipoComponente(item)}} </span>
-            </ng-template>
-        </ng-template>
-
-        <ng-template [ngIf]="item.tipo === 'EXPRESSAO'">
-            <!--Exibem "(" ou "E/OU (" no inicio da expressão-->
-            <span *ngIf="i === 0; else elseExpressaoNaoPrimeira" class="parenteses">&#40; </span>
-            <ng-template #elseExpressaoNaoPrimeira>
-                <span class="operador">{{item.operador}} </span>
-                <span class="parenteses">&#40; </span>
-            </ng-template>
-
-            <!--Exibe recursivamente os filhos-->
-            <ng-template ngFor [ngForOf]="item.children" [ngForTemplate]="expressaoRoot">
-                <!--
-                    NOTE: The "$implicit" property of the ngFor context is what will
-                    be made available to the template ref's implicit let-node binding.
-                -->
-            </ng-template>
-
-            <!--Fecha parenteses-->
-            <span class="parenteses">&#41; </span>
-
-        </ng-template>
+    <item-expressao *ngFor="let item of itemExpressoes; let i = index" [itemExpressao]="item"
+        [index]="i"></item-expressao>
 
 
-
-    </ng-template>
 </div>
