@@ -15,10 +15,9 @@ export class ExpressaoFormatadaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getLabelTipoComponente(item: ItemExpressao, index: number) {
+  getLabelTipoComponente(item: ItemExpressao) {
     if(!item.componente) return '';
-    let codigo = item.componente.substring(0,7);
-    return index=== 0 ? `${codigo} `: `${item.operador} ${codigo} `
+    return item.componente.substring(0,7);
   }
 
 }
